@@ -28,7 +28,21 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
-        return new JsonResponse(['words' => $sentence->numberOfWords()]);
+        return new JsonResponse([Sentence::WORDS => $sentence->numberOfWords()]);
+    }
+
+    /**
+     * @Route("/letters", name="letters_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function letters(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        return new JsonResponse([Sentence::LETTERS => $sentence->numberOfLetters()]);
     }
 
 }
