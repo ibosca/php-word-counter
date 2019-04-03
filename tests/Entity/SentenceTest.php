@@ -20,7 +20,6 @@ class SentenceTest extends TestCase
         $expected = 4;
         $actual   = $sentence->numberOfWords();
 
-
         $this->assertEquals($expected, $actual);
     }
 
