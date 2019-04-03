@@ -1,7 +1,7 @@
 # php-word-counter
 Simple Word Counter API written in PHP/Symfony 4
 
-#Setting up
+# Setting up
 
 - git clone https://github.com/ibosca/php-word-counter.git
 - cd php-word-counter/
