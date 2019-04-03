@@ -11,6 +11,10 @@ namespace App\Entity;
 
 class Sentence
 {
+
+    const WORDS   = 'words';
+    const LETTERS = 'letters';
+
     /**
      * @var string $body
      */
@@ -65,6 +69,10 @@ class Sentence
 
     public function numberOfWords() : int {
         return count($this->words);
+    }
+
+    public  function numberOfLetters() : int {
+        return strlen($this->body);
     }
 
 
