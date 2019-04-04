@@ -23,6 +23,36 @@ class SentenceTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testWordsStartingWithVocalsCount()
+    {
+        $sentence = new Sentence("I have four words");
+
+        $expected = 1;
+        $actual   = $sentence->wordsStartingWithVocal();
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testWordsStartingWithCapitalLetterCount()
+    {
+        $sentence = new Sentence("I have four words");
+
+        $expected = 1;
+        $actual   = $sentence->wordsStartingWithCapitalLetter();
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testWordsLargerThanTwoLetterCount()
+    {
+        $sentence = new Sentence("I have four words");
+
+        $expected = 3;
+        $actual   = $sentence->wordsLargerThanTwoCharactersLength();
+
+        $this->assertEquals($expected, $actual);
+    }
+
 
 
 }

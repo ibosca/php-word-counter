@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="01be9c56-6d90-4570-8f4c-dd4540269630" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/logs/nginx/symfony_access.log" beforeDir="false" afterPath="$PROJECT_DIR$/docker/logs/nginx/symfony_access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sentence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sentence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Entity/SentenceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Entity/SentenceTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,36 +33,38 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Dockerfile" value="2" />
+          <entry key="Dockerfile" value="4" />
           <entry key="conf" value="1" />
           <entry key="json" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="3" />
-          <entry key="yaml" value="3" />
+          <entry key="php" value="6" />
+          <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dockerfile" value="2" />
+          <entry key="Dockerfile" value="4" />
           <entry key="JSON" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="3" />
+          <entry key="PHP" value="6" />
           <entry key="SmartyConfig" value="1" />
-          <entry key="YAML" value="3" />
+          <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Dockerfile" value="36" />
           <entry key="conf" value="1" />
-          <entry key="md" value="45" />
-          <entry key="php" value="666" />
+          <entry key="md" value="88" />
+          <entry key="php" value="1414" />
           <entry key="yaml" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="45" />
-          <entry key="PHP" value="666" />
+          <entry key="Dockerfile" value="36" />
+          <entry key="Markdown" value="88" />
+          <entry key="PHP" value="1414" />
           <entry key="SmartyConfig" value="1" />
           <entry key="YAML" value="40" />
         </counts>
@@ -72,20 +76,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="120">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker/nginx/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="240">
-                <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#118#149#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,68 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/nginx/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/nginx/default.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-                <element signature="e#118#149#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/services.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -171,14 +135,14 @@
       <list>
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/tests/Entity/SentenceTest.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Sentence.php" />
         <option value="$PROJECT_DIR$/src/Controller/WordController.php" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yaml" />
-        <option value="$PROJECT_DIR$/docker/php-fpm/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/nginx/default.conf" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/docker/php-fpm/Dockerfile" />
+        <option value="$PROJECT_DIR$/tests/Entity/SentenceTest.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Sentence.php" />
       </list>
     </option>
   </component>
@@ -235,8 +199,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -250,6 +215,28 @@
             <path>
               <item name="php-word-counter" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-word-counter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-word-counter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-word-counter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-word-counter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-word-counter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-word-counter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-word-counter" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-word-counter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-word-counter" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,7 +298,7 @@
       <option name="presentableId" value="Default" />
       <updated>1554251691744</updated>
       <workItem from="1554251693989" duration="2796000" />
-      <workItem from="1554397262354" duration="1218000" />
+      <workItem from="1554397262354" duration="5394000" />
     </task>
     <servers />
   </component>
@@ -321,7 +308,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4014000" />
+    <option name="totallyTimeSpent" value="8190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -340,7 +327,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -355,40 +342,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/WordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#116#140#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#118#149#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -400,17 +355,31 @@
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/nginx/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/nginx/default.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/WordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#116#140#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -423,18 +392,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="120">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="240">
-            <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/docker/nginx/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#118#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

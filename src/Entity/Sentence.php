@@ -14,6 +14,7 @@ class Sentence
 
     const WORDS   = 'words';
     const LETTERS = 'letters';
+    const VOCALS = ['a', 'e', 'i', 'o', 'u'];
 
     /**
      * @var string $body
@@ -73,6 +74,75 @@ class Sentence
 
     public  function numberOfLetters() : int {
         return strlen($this->body);
+    }
+
+    public function wordsStartingWithVocal() : int {
+
+        $words = 0;
+
+        foreach ($this->words as $word){
+
+            $initialLetter = substr(strtolower($word), 0, 1);
+
+            if($this->isVocal($initialLetter)){
+                $words++;
+            }
+
+        }
+
+        return $words;
+
+    }
+
+    public function wordsLargerThanTwoCharactersLength() : int {
+
+        $words = 0;
+
+        foreach ($this->words as $word){
+
+            if(strlen($word) > 2){
+                $words++;
+            }
+
+        }
+
+        return $words;
+
+    }
+
+    public function wordsStartingWithCapitalLetter() : int {
+
+        $words = 0;
+
+        foreach ($this->words as $word){
+
+            $initialLetter = substr($word, 0, 1);
+
+            if($this->isCapitalLetter($initialLetter)){
+                $words++;
+            }
+
+        }
+
+        return $words;
+    }
+
+
+    public function isVocal($letter) : bool {
+
+        if(in_array($letter, Sentence::VOCALS)){
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isCapitalLetter($letter) : bool {
+
+        $lowerCaseLetter = strtolower($letter);
+
+        return $lowerCaseLetter != $letter;
+
     }
 
 
