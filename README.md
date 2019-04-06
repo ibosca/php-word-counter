@@ -1,7 +1,7 @@
 # php-word-counter
 Simple Word Counter API written in PHP/Symfony 4
 
-## Setting up
+## Setting up on local machine
 
 - git clone https://github.com/ibosca/php-word-counter.git
 - cd php-word-counter/
@@ -17,7 +17,7 @@ Note: Composer is required to setting up the project. Get it on: https://getcomp
 - cd php-word-counter/docker
 - docker-compose build
 - docker-compose up -d
-- docker exec  docker_php_1 composer install (only for the very first time)
+- docker exec  docker_php_1 composer install
 - Access on http://127.0.0.1:8080
 
 Based on https://blog.rafalmuszynski.pl/how-to-configure-docker-for-symfony-4-applications/
