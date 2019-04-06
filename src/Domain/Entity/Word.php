@@ -9,6 +9,8 @@
 namespace App\Domain\Entity;
 
 
+use App\Domain\Exception\EmptyStringException;
+
 class Word
 {
 
@@ -27,11 +29,12 @@ class Word
     /**
      * Word constructor.
      * @param string $text
+     * @throws EmptyStringException
      */
     public function __construct($text)
     {
         if(empty($text)){
-            throw new \LengthException("Empty strings are not allowed.");
+            throw new EmptyStringException();
         }
 
         $this->text = $text;
@@ -48,10 +51,11 @@ class Word
 
     /**
      * @param mixed $text
+     * @throws EmptyStringException
      */
     public function setText($text): void
     {
-        $this->text = $text;
+        new self($text);
     }
 
     public function getInitialLetter() : string
@@ -64,21 +68,14 @@ class Word
         return strlen($this->text) > 2;
     }
 
-    public function isStartingWithVocal() : bool {
-
-        if(in_array(strtolower($this->initialLetter), Word::VOCALS)){
-            return true;
-        }
-
-        return false;
+    public function isStartingWithVocal() : bool
+    {
+        return in_array(strtolower($this->initialLetter), Word::VOCALS);
     }
 
-    public function isStartingWithCapitalLetter() : bool {
-
-        $lowerCaseLetter = strtolower($this->initialLetter);
-
-        return $lowerCaseLetter != $this->initialLetter;
-
+    public function isStartingWithCapitalLetter() : bool
+    {
+        return strtolower($this->initialLetter) != $this->initialLetter;
     }
 
 

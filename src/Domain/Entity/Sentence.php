@@ -9,6 +9,8 @@
 namespace App\Domain\Entity;
 
 
+use App\Domain\Exception\EmptyStringException;
+
 class Sentence
 {
 
@@ -143,7 +145,7 @@ class Sentence
 
             try {
                 $word = new Word($string);
-            } catch (\LengthException $exception) {
+            } catch (EmptyStringException $exception) {
                 continue;
             }
 
