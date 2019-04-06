@@ -12,9 +12,7 @@ namespace App\Entity;
 class Sentence
 {
 
-    const WORDS   = 'words';
     const LETTERS = 'letters';
-    const VOCALS = ['a', 'e', 'i', 'o', 'u'];
 
     /**
      * @var string $body
@@ -33,7 +31,7 @@ class Sentence
     public function __construct($body)
     {
         $this->body  = $body;
-        $this->words = explode(' ', $this->body);
+        $this->buildWords();
     }
 
     /**
@@ -50,6 +48,7 @@ class Sentence
     public function setBody($body): void
     {
         $this->body = $body;
+        $this->buildWords();
     }
 
     /**
@@ -68,6 +67,16 @@ class Sentence
         $this->words = $words;
     }
 
+    public function buildWords()
+    {
+        $strings = explode(' ', $this->body);
+        unset($this->words);
+
+        foreach ($strings as $string){
+            $this->words[] = new Word($string);
+        }
+    }
+
     public function numberOfWords() : int {
         return count($this->words);
     }
@@ -80,11 +89,10 @@ class Sentence
 
         $words = 0;
 
+        /** @var Word $word */
         foreach ($this->words as $word){
 
-            $initialLetter = substr(strtolower($word), 0, 1);
-
-            if($this->isVocal($initialLetter)){
+            if($word->isStartingWithVocal()){
                 $words++;
             }
 
@@ -98,9 +106,10 @@ class Sentence
 
         $words = 0;
 
+        /** @var Word $word */
         foreach ($this->words as $word){
 
-            if(strlen($word) > 2){
+            if($word->isLargerThanTwo()){
                 $words++;
             }
 
@@ -114,35 +123,16 @@ class Sentence
 
         $words = 0;
 
+        /** @var Word $word */
         foreach ($this->words as $word){
 
-            $initialLetter = substr($word, 0, 1);
-
-            if($this->isCapitalLetter($initialLetter)){
+            if($word->isStartingWithCapitalLetter()){
                 $words++;
             }
 
         }
 
         return $words;
-    }
-
-
-    public function isVocal($letter) : bool {
-
-        if(in_array($letter, Sentence::VOCALS)){
-            return true;
-        }
-
-        return false;
-    }
-
-    public function isCapitalLetter($letter) : bool {
-
-        $lowerCaseLetter = strtolower($letter);
-
-        return $lowerCaseLetter != $letter;
-
     }
 
 
