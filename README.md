@@ -14,10 +14,8 @@ Note: Composer is required to setting up the project. Get it on: https://getcomp
 
 ### Using Docker
 - git clone https://github.com/ibosca/php-word-counter.git
-- cd php-word-counter/docker
-- docker-compose build
-- docker-compose up -d
-- docker exec docker_php_1 composer install
+- cd php-word-counter
+- make start
 - Access on http://127.0.0.1:8080
 
 ## Running Tests
@@ -26,6 +24,6 @@ Note: Composer is required to setting up the project. Get it on: https://getcomp
 - ./bin/phpunit
 
 ### Using Docker
-- docker exec docker_php_1 ./bin/phpunit
+- make test
 
 Based on https://blog.rafalmuszynski.pl/how-to-configure-docker-for-symfony-4-applications/
