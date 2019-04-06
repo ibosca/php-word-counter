@@ -52,8 +52,7 @@ class Sentence
      */
     public function __construct($body)
     {
-        $this->body  = $body;
-        $this->buildWords();
+        $this->update($body);
     }
 
     /**
@@ -69,7 +68,7 @@ class Sentence
      */
     public function setBody($body): void
     {
-        new self($body);
+        $this->update($body);
     }
 
     /**
@@ -134,6 +133,12 @@ class Sentence
     public function setWordsStartingWithCapitalLetter(array $wordsStartingWithCapitalLetter): void
     {
         $this->wordsStartingWithCapitalLetter = $wordsStartingWithCapitalLetter;
+    }
+
+    private function update($body) : void
+    {
+        $this->body  = $body;
+        $this->buildWords();
     }
 
     public function buildWords()

@@ -33,18 +33,13 @@ class Word
      */
     public function __construct($text)
     {
-        if(empty($text)){
-            throw new EmptyStringException();
-        }
-
-        $this->text = $text;
-        $this->initialLetter = $this->getInitialLetter();
+        $this->update($text);
     }
 
     /**
      * @return mixed
      */
-    public function getText() :string
+    public function getText() : string
     {
         return $this->text;
     }
@@ -53,9 +48,23 @@ class Word
      * @param mixed $text
      * @throws EmptyStringException
      */
-    public function setText($text): void
+    public function setText($text) : void
     {
-        new self($text);
+        $this->update($text);
+    }
+
+    /**
+     * @param $text
+     * @throws EmptyStringException
+     */
+    private function update($text) : void
+    {
+        if(empty($text)){
+            throw new EmptyStringException();
+        }
+
+        $this->text = $text;
+        $this->initialLetter = $this->getInitialLetter();
     }
 
     public function getInitialLetter() : string
