@@ -16,4 +16,7 @@
 .phpunit
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+
 /docker/logs/
+/.idea/
