@@ -161,12 +161,12 @@ class Sentence
     }
 
     public function unsetWords() {
-        unset(
-            $this->words,
-            $this->wordsStartingWithVocal,
-            $this->wordsLargerThanTwo,
-            $this->wordsStartingWithCapitalLetter
-        );
+
+        $this->words = [];
+        $this->wordsStartingWithVocal = [];
+        $this->wordsLargerThanTwo = [];
+        $this->wordsStartingWithCapitalLetter = [];
+
     }
 
     public function numberOfWords() : int {
