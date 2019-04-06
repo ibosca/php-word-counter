@@ -28,7 +28,7 @@ class SentenceTest extends TestCase
         $sentence = new Sentence("I have four words");
 
         $expected = 1;
-        $actual   = $sentence->wordsStartingWithVocal();
+        $actual   = $sentence->numberOfWordsStartingWithVocal();
 
         $this->assertEquals($expected, $actual);
     }
@@ -38,7 +38,7 @@ class SentenceTest extends TestCase
         $sentence = new Sentence("I have four words");
 
         $expected = 1;
-        $actual   = $sentence->wordsStartingWithCapitalLetter();
+        $actual   = $sentence->numberOfWordsStartingWithCapitalLetter();
 
         $this->assertEquals($expected, $actual);
     }
@@ -48,7 +48,7 @@ class SentenceTest extends TestCase
         $sentence = new Sentence("I have four words");
 
         $expected = 3;
-        $actual   = $sentence->wordsLargerThanTwoCharactersLength();
+        $actual   = $sentence->numberOfWordsLargerThanTwoCharactersLength();
 
         $this->assertEquals($expected, $actual);
     }

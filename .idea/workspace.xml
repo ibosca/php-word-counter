@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01be9c56-6d90-4570-8f4c-dd4540269630" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Word.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Sentence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sentence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Entity/SentenceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Entity/SentenceTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+            <state>
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="26">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#118#149#0#PHP" expanded="true" />
@@ -63,13 +62,13 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/docker/nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/nginx/default.conf" />
-        <option value="$PROJECT_DIR$/tests/Entity/SentenceTest.php" />
         <option value="$PROJECT_DIR$/docker/php-fpm/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Controller/WordController.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Entity/Word.php" />
+        <option value="$PROJECT_DIR$/tests/Entity/SentenceTest.php" />
         <option value="$PROJECT_DIR$/src/Entity/Sentence.php" />
       </list>
     </option>
@@ -241,13 +240,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14404000" />
+    <option name="totallyTimeSpent" value="15603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27844074" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27844074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -341,17 +340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#118#149#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Word.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
@@ -359,10 +347,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Entity/SentenceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#118#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Sentence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        <state>
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>

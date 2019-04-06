@@ -13,6 +13,11 @@ class Sentence
 {
 
     const LETTERS = 'letters';
+    const WORDS   = 'words';
+
+    const WORDS_STARTING_WITH_VOCALS         = 'wordsStartingWithVocals';
+    const WORDS_LARGER_THAN_TWO              = 'wordsLargerThanTwo';
+    const WORDS_STARTING_WITH_CAPITAL_LETTER = 'wordsStartingWithCapitalLetter';
 
     /**
      * @var string $body
@@ -23,6 +28,21 @@ class Sentence
      * @var array $words
      */
     private $words;
+
+    /**
+     * @var array $wordsStartingWithVocal
+     */
+    private $wordsStartingWithVocal;
+
+    /**
+     * @var array $wordsLargerThanTwo
+     */
+    private $wordsLargerThanTwo;
+
+    /**
+     * @var array $wordsStartingWithCapitalLetter
+     */
+    private $wordsStartingWithCapitalLetter;
 
     /**
      * Sentence constructor.
@@ -47,8 +67,7 @@ class Sentence
      */
     public function setBody($body): void
     {
-        $this->body = $body;
-        $this->buildWords();
+        new self($body);
     }
 
     /**
@@ -67,14 +86,87 @@ class Sentence
         $this->words = $words;
     }
 
+    /**
+     * @return array
+     */
+    public function getWordsStartingWithVocal(): array
+    {
+        return $this->wordsStartingWithVocal;
+    }
+
+    /**
+     * @param array $wordsStartingWithVocal
+     */
+    public function setWordsStartingWithVocal(array $wordsStartingWithVocal): void
+    {
+        $this->wordsStartingWithVocal = $wordsStartingWithVocal;
+    }
+
+    /**
+     * @return array
+     */
+    public function getWordsLargerThanTwo(): array
+    {
+        return $this->wordsLargerThanTwo;
+    }
+
+    /**
+     * @param array $wordsLargerThanTwo
+     */
+    public function setWordsLargerThanTwo(array $wordsLargerThanTwo): void
+    {
+        $this->wordsLargerThanTwo = $wordsLargerThanTwo;
+    }
+
+    /**
+     * @return array
+     */
+    public function getWordsStartingWithCapitalLetter(): array
+    {
+        return $this->wordsStartingWithCapitalLetter;
+    }
+
+    /**
+     * @param array $wordsStartingWithCapitalLetter
+     */
+    public function setWordsStartingWithCapitalLetter(array $wordsStartingWithCapitalLetter): void
+    {
+        $this->wordsStartingWithCapitalLetter = $wordsStartingWithCapitalLetter;
+    }
+
     public function buildWords()
     {
         $strings = explode(' ', $this->body);
-        unset($this->words);
+        $this->unsetWords();
 
         foreach ($strings as $string){
-            $this->words[] = new Word($string);
+
+            $word = new Word($string);
+
+            $this->words[] = $word;
+
+            if($word->isStartingWithVocal()){
+                $this->wordsStartingWithVocal[] = $word;
+            }
+
+            if($word->isLargerThanTwo()){
+                $this->wordsLargerThanTwo[] = $word;
+            }
+
+            if($word->isStartingWithCapitalLetter()){
+                $this->wordsStartingWithCapitalLetter[] = $word;
+            }
+
         }
+    }
+
+    public function unsetWords() {
+        unset(
+            $this->words,
+            $this->wordsStartingWithVocal,
+            $this->wordsLargerThanTwo,
+            $this->wordsStartingWithCapitalLetter
+        );
     }
 
     public function numberOfWords() : int {
@@ -85,55 +177,16 @@ class Sentence
         return strlen($this->body);
     }
 
-    public function wordsStartingWithVocal() : int {
-
-        $words = 0;
-
-        /** @var Word $word */
-        foreach ($this->words as $word){
-
-            if($word->isStartingWithVocal()){
-                $words++;
-            }
-
-        }
-
-        return $words;
-
+    public function numberOfWordsStartingWithVocal() : int {
+        return count($this->wordsStartingWithVocal);
     }
 
-    public function wordsLargerThanTwoCharactersLength() : int {
-
-        $words = 0;
-
-        /** @var Word $word */
-        foreach ($this->words as $word){
-
-            if($word->isLargerThanTwo()){
-                $words++;
-            }
-
-        }
-
-        return $words;
-
+    public function numberOfWordsLargerThanTwoCharactersLength() : int {
+        return count($this->wordsLargerThanTwo);
     }
 
-    public function wordsStartingWithCapitalLetter() : int {
-
-        $words = 0;
-
-        /** @var Word $word */
-        foreach ($this->words as $word){
-
-            if($word->isStartingWithCapitalLetter()){
-                $words++;
-            }
-
-        }
-
-        return $words;
+    public function numberOfWordsStartingWithCapitalLetter() : int {
+        return count($this->wordsStartingWithCapitalLetter);
     }
-
 
 }

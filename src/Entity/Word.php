@@ -11,7 +11,7 @@ namespace App\Entity;
 
 class Word
 {
-    const WORDS   = 'words';
+
     const VOCALS = ['a', 'e', 'i', 'o', 'u'];
 
     /**
