@@ -141,7 +141,11 @@ class Sentence
 
         foreach ($strings as $string){
 
-            $word = new Word($string);
+            try {
+                $word = new Word($string);
+            } catch (\LengthException $exception) {
+                continue;
+            }
 
             $this->words[] = $word;
 

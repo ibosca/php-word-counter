@@ -30,6 +30,10 @@ class Word
      */
     public function __construct($text)
     {
+        if(empty($text)){
+            throw new \LengthException("Empty strings are not allowed.");
+        }
+
         $this->text = $text;
         $this->initialLetter = $this->getInitialLetter();
     }
