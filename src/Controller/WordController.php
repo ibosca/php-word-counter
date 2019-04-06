@@ -28,7 +28,12 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
-        return new JsonResponse([Sentence::WORDS => $sentence->numberOfWords()]);
+        return new JsonResponse([
+            Sentence::WORDS                              => $sentence->numberOfWords(),
+            Sentence::WORDS_STARTING_WITH_VOCALS         => $sentence->numberOfWordsStartingWithVocal(),
+            Sentence::WORDS_LARGER_THAN_TWO              => $sentence->numberOfWordsLargerThanTwoCharactersLength(),
+            Sentence::WORDS_STARTING_WITH_CAPITAL_LETTER => $sentence->numberOfWordsStartingWithCapitalLetter()
+        ]);
     }
 
     /**
