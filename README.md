@@ -20,4 +20,9 @@ Note: Composer is required to setting up the project. Get it on: https://getcomp
 - docker exec  docker_php_1 composer install
 - Access on http://127.0.0.1:8080
 
+## Running Tests
+
+- On local machine:
+- Using docker: 
+
 Based on https://blog.rafalmuszynski.pl/how-to-configure-docker-for-symfony-4-applications/
