@@ -80,27 +80,11 @@ class Sentence
     }
 
     /**
-     * @param array $words
-     */
-    public function setWords(array $words): void
-    {
-        $this->words = $words;
-    }
-
-    /**
      * @return array
      */
     public function getWordsStartingWithVocal(): array
     {
         return $this->wordsStartingWithVocal;
-    }
-
-    /**
-     * @param array $wordsStartingWithVocal
-     */
-    public function setWordsStartingWithVocal(array $wordsStartingWithVocal): void
-    {
-        $this->wordsStartingWithVocal = $wordsStartingWithVocal;
     }
 
     /**
@@ -112,27 +96,11 @@ class Sentence
     }
 
     /**
-     * @param array $wordsLargerThanTwo
-     */
-    public function setWordsLargerThanTwo(array $wordsLargerThanTwo): void
-    {
-        $this->wordsLargerThanTwo = $wordsLargerThanTwo;
-    }
-
-    /**
      * @return array
      */
     public function getWordsStartingWithCapitalLetter(): array
     {
         return $this->wordsStartingWithCapitalLetter;
-    }
-
-    /**
-     * @param array $wordsStartingWithCapitalLetter
-     */
-    public function setWordsStartingWithCapitalLetter(array $wordsStartingWithCapitalLetter): void
-    {
-        $this->wordsStartingWithCapitalLetter = $wordsStartingWithCapitalLetter;
     }
 
     private function update($body) : void
