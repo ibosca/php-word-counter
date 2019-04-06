@@ -6,7 +6,7 @@
  * Time: 02:50
  */
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 
 class Sentence

@@ -6,7 +6,7 @@
  * Time: 17:08
  */
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 
 class Word

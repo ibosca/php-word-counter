@@ -6,10 +6,10 @@
  * Time: 03:13
  */
 
-namespace App\Tests\Entity;
+namespace App\Tests\Domain\Entity;
 
+use App\Domain\Entity\Sentence;
 use PHPUnit\Framework\TestCase;
-use App\Entity\Sentence;
 
 class SentenceTest extends TestCase
 {

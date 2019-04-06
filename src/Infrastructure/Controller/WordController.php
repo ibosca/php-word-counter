@@ -6,9 +6,9 @@
  * Time: 02:39
  */
 
-namespace App\Controller;
+namespace App\Infrastructure\Controller;
 
-use App\Entity\Sentence;
+use App\Domain\Entity\Sentence;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
