@@ -8,7 +8,11 @@
 
 namespace App\Infrastructure\Controller;
 
+use App\Domain\Entity\LargerThanTwoWordCounter;
 use App\Domain\Entity\Sentence;
+use App\Domain\Entity\StartingWithCapitalLetterWordCounter;
+use App\Domain\Entity\StartingWithVocalWordCounter;
+use App\Domain\Entity\WordCounter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,11 +32,16 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
+        $counter        = new WordCounter($sentence);
+        $vocalCounter   = new StartingWithVocalWordCounter($sentence);
+        $capitalCounter = new StartingWithCapitalLetterWordCounter($sentence);
+        $largerCounter  = new LargerThanTwoWordCounter($sentence);
+
         return new JsonResponse([
-            Sentence::WORDS                              => $sentence->numberOfWords(),
-            Sentence::WORDS_STARTING_WITH_VOCALS         => $sentence->numberOfWordsStartingWithVocal(),
-            Sentence::WORDS_LARGER_THAN_TWO              => $sentence->numberOfWordsLargerThanTwoCharactersLength(),
-            Sentence::WORDS_STARTING_WITH_CAPITAL_LETTER => $sentence->numberOfWordsStartingWithCapitalLetter()
+            Sentence::WORDS                              => $counter->count(),
+            Sentence::WORDS_STARTING_WITH_VOCALS         => $vocalCounter->count(),
+            Sentence::WORDS_LARGER_THAN_TWO              => $largerCounter->count(),
+            Sentence::WORDS_STARTING_WITH_CAPITAL_LETTER => $capitalCounter->count()
         ]);
     }
 
