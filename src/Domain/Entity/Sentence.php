@@ -55,64 +55,16 @@ class Sentence
         $this->update($body);
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBody()
-    {
-        return $this->body;
-    }
-
-    /**
-     * @param mixed $body
-     */
-    public function setBody($body): void
-    {
-        $this->update($body);
-    }
-
-    /**
-     * @return array
-     */
-    public function getWords(): array
-    {
-        return $this->words;
-    }
-
-    /**
-     * @return array
-     */
-    public function getWordsStartingWithVocal(): array
-    {
-        return $this->wordsStartingWithVocal;
-    }
-
-    /**
-     * @return array
-     */
-    public function getWordsLargerThanTwo(): array
-    {
-        return $this->wordsLargerThanTwo;
-    }
-
-    /**
-     * @return array
-     */
-    public function getWordsStartingWithCapitalLetter(): array
-    {
-        return $this->wordsStartingWithCapitalLetter;
-    }
-
     private function update($body) : void
     {
         $this->body  = $body;
+        $this->unsetWords();
         $this->buildWords();
     }
 
-    public function buildWords()
+    private function buildWords()
     {
         $strings = explode(' ', $this->body);
-        $this->unsetWords();
 
         foreach ($strings as $string){
 
@@ -135,11 +87,10 @@ class Sentence
             if($word->isStartingWithCapitalLetter()){
                 $this->wordsStartingWithCapitalLetter[] = $word;
             }
-
         }
     }
 
-    public function unsetWords() {
+    private function unsetWords() {
 
         $this->words = [];
         $this->wordsStartingWithVocal = [];
@@ -150,10 +101,6 @@ class Sentence
 
     public function numberOfWords() : int {
         return count($this->words);
-    }
-
-    public  function numberOfLetters() : int {
-        return strlen($this->body);
     }
 
     public function numberOfWordsStartingWithVocal() : int {
