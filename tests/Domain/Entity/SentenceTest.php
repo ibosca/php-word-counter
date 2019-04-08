@@ -9,48 +9,18 @@
 namespace App\Tests\Domain\Entity;
 
 use App\Domain\Entity\Sentence;
+use App\Domain\Entity\Word;
 use PHPUnit\Framework\TestCase;
 
 class SentenceTest extends TestCase
 {
-    public function testWordsCount()
+    public function testWordsBuilder()
     {
         $sentence = new Sentence("I have four words");
 
-        $expected = 4;
-        $actual   = $sentence->numberOfWords();
+        $actual   = current($sentence->getWords());
 
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testWordsStartingWithVocalsCount()
-    {
-        $sentence = new Sentence("I have four words");
-
-        $expected = 1;
-        $actual   = $sentence->numberOfWordsStartingWithVocal();
-
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testWordsStartingWithCapitalLetterCount()
-    {
-        $sentence = new Sentence("I have four words");
-
-        $expected = 1;
-        $actual   = $sentence->numberOfWordsStartingWithCapitalLetter();
-
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testWordsLargerThanTwoLetterCount()
-    {
-        $sentence = new Sentence("I have four words");
-
-        $expected = 3;
-        $actual   = $sentence->numberOfWordsLargerThanTwoCharactersLength();
-
-        $this->assertEquals($expected, $actual);
+        $this->assertInstanceOf(Word::class, $actual);
     }
 
 
