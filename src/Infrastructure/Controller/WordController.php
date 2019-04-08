@@ -32,17 +32,58 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
-        $counter        = new WordCounter($sentence);
-        $vocalCounter   = new StartingWithVocalWordCounter($sentence);
-        $capitalCounter = new StartingWithCapitalLetterWordCounter($sentence);
-        $largerCounter  = new LargerThanTwoWordCounter($sentence);
+        $counter = new WordCounter($sentence);
 
-        return new JsonResponse([
-            Sentence::WORDS                              => $counter->count(),
-            Sentence::WORDS_STARTING_WITH_VOCALS         => $vocalCounter->count(),
-            Sentence::WORDS_LARGER_THAN_TWO              => $largerCounter->count(),
-            Sentence::WORDS_STARTING_WITH_CAPITAL_LETTER => $capitalCounter->count()
-        ]);
+        return new JsonResponse($counter->count());
+    }
+
+    /**
+     * @Route("/wordsStartingWithVocals", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsStartingWithVocals(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        $counter = new StartingWithVocalWordCounter($sentence);
+
+        return new JsonResponse($counter->count());
+    }
+
+    /**
+     * @Route("/wordsLargerThanTwo", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsLargerThanTwo(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        $counter = new StartingWithCapitalLetterWordCounter($sentence);
+
+        return new JsonResponse($counter->count());
+
+    }
+
+    /**
+     * @Route("/wordsStartingWithCapitalLetter", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsStartingWithCapitalLetter(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        $counter = new StartingWithCapitalLetterWordCounter($sentence);
+
+        return new JsonResponse($counter->count());
     }
 
     /**
