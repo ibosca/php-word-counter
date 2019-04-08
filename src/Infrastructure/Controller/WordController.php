@@ -28,12 +28,49 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
-        return new JsonResponse([
-            Sentence::WORDS                              => $sentence->numberOfWords(),
-            Sentence::WORDS_STARTING_WITH_VOCALS         => $sentence->numberOfWordsStartingWithVocal(),
-            Sentence::WORDS_LARGER_THAN_TWO              => $sentence->numberOfWordsLargerThanTwoCharactersLength(),
-            Sentence::WORDS_STARTING_WITH_CAPITAL_LETTER => $sentence->numberOfWordsStartingWithCapitalLetter()
-        ]);
+        return new JsonResponse($sentence->numberOfWords());
+    }
+
+    /**
+     * @Route("/wordsStartingWithVocals", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsStartingWithVocals(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        return new JsonResponse($sentence->numberOfWordsStartingWithVocal());
+    }
+
+    /**
+     * @Route("/wordsLargerThanTwo", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsLargerThanTwo(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        return new JsonResponse($sentence->numberOfWordsLargerThanTwoCharactersLength());
+    }
+
+    /**
+     * @Route("/wordsStartingWithCapitalLetter", name="words_counter", methods={"POST"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function wordsStartingWithCapitalLetter(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $sentence = new Sentence($data['body']);
+
+        return new JsonResponse($sentence->numberOfWordsStartingWithCapitalLetter());
     }
 
     /**
