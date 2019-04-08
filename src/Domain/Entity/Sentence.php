@@ -8,20 +8,21 @@
 
 namespace App\Domain\Entity;
 
+use App\Domain\Exception\EmptyStringException;
+
 class Sentence
 {
-
-    const LETTERS = 'letters';
     const WORDS   = 'words';
-
-    const WORDS_STARTING_WITH_VOCALS         = 'wordsStartingWithVocals';
-    const WORDS_LARGER_THAN_TWO              = 'wordsLargerThanTwo';
-    const WORDS_STARTING_WITH_CAPITAL_LETTER = 'wordsStartingWithCapitalLetter';
 
     /**
      * @var string $body
      */
     private $body;
+
+    /**
+     * @var array $words
+     */
+    private $words = [];
 
     /**
      * Sentence constructor.
@@ -30,14 +31,31 @@ class Sentence
     public function __construct($body)
     {
         $this->body = $body;
+        $this->buildWords();
+    }
+
+    public function buildWords() : void
+    {
+        $strings = explode(' ', $this->body);
+
+        foreach ($strings as $string){
+
+            try {
+                $word = new Word($string);
+            } catch (EmptyStringException $exception) {
+                continue;
+            }
+
+            $this->words[] = $word;
+        }
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getBody(): string
+    public function getWords(): array
     {
-        return $this->body;
+        return $this->words;
     }
 
 }

@@ -8,11 +8,11 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Domain\Entity\LargerThanTwoWordCounter;
+use App\ApplicationService\UseCase\LargerThanTwoWordCounter;
+use App\ApplicationService\UseCase\StartingWithCapitalLetterWordCounter;
+use App\ApplicationService\UseCase\StartingWithVocalWordCounter;
+use App\ApplicationService\UseCase\WordCounter;
 use App\Domain\Entity\Sentence;
-use App\Domain\Entity\StartingWithCapitalLetterWordCounter;
-use App\Domain\Entity\StartingWithVocalWordCounter;
-use App\Domain\Entity\WordCounter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,11 +34,11 @@ class WordController extends AbstractController
 
         $counter = new WordCounter($sentence);
 
-        return new JsonResponse($counter->count());
+        return new JsonResponse([Sentence::WORDS => $counter->count()]);
     }
 
     /**
-     * @Route("/wordsStartingWithVocals", name="words_counter", methods={"POST"})
+     * @Route("/words/vocal-start", name="words_starting_with_vocals_counter", methods={"POST"})
      * @param Request $request
      * @return JsonResponse
      */
@@ -50,11 +50,11 @@ class WordController extends AbstractController
 
         $counter = new StartingWithVocalWordCounter($sentence);
 
-        return new JsonResponse($counter->count());
+        return new JsonResponse([ Sentence::WORDS => $counter->count()]);
     }
 
     /**
-     * @Route("/wordsLargerThanTwo", name="words_counter", methods={"POST"})
+     * @Route("/words/larger", name="words_larger_than_two_counter", methods={"POST"})
      * @param Request $request
      * @return JsonResponse
      */
@@ -64,14 +64,14 @@ class WordController extends AbstractController
 
         $sentence = new Sentence($data['body']);
 
-        $counter = new StartingWithCapitalLetterWordCounter($sentence);
+        $counter = new LargerThanTwoWordCounter($sentence);
 
-        return new JsonResponse($counter->count());
+        return new JsonResponse([Sentence::WORDS => $counter->count()]);
 
     }
 
     /**
-     * @Route("/wordsStartingWithCapitalLetter", name="words_counter", methods={"POST"})
+     * @Route("/words/capital-letter-start", name="words_starting_with_capital_letter_counter", methods={"POST"})
      * @param Request $request
      * @return JsonResponse
      */
@@ -83,21 +83,7 @@ class WordController extends AbstractController
 
         $counter = new StartingWithCapitalLetterWordCounter($sentence);
 
-        return new JsonResponse($counter->count());
-    }
-
-    /**
-     * @Route("/letters", name="letters_counter", methods={"POST"})
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function letters(Request $request)
-    {
-        $data = json_decode($request->getContent(), true);
-
-        $sentence = new Sentence($data['body']);
-
-        return new JsonResponse([Sentence::LETTERS => $sentence->numberOfLetters()]);
+        return new JsonResponse([Sentence::WORDS => $counter->count()]);
     }
 
 }

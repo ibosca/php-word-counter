@@ -6,32 +6,30 @@
  * Time: 16:57
  */
 
-namespace App\Domain\Entity;
+namespace App\ApplicationService\UseCase;
 
-use App\Domain\Exception\EmptyStringException;
+use App\Domain\Entity\Word;
 
 class StartingWithVocalWordCounter extends WordCounter
 {
+
     /**
      * @var array $words
      */
     private $words = [];
 
-    public function count(): int
+    public function count() : int
     {
-        $strings = explode(' ', $this->sentence->getBody());
 
-        foreach ($strings as $string){
+        $words = $this->sentence->getWords();
 
-            try {
-                $word = new Word($string);
-            } catch (EmptyStringException $exception) {
-                continue;
-            }
+        /** @var Word $word */
+        foreach ($words as $word){
 
             if($word->isStartingWithVocal()){
                 $this->words[] = $word;
             }
+
         }
 
         return count($this->words);

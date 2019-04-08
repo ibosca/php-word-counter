@@ -6,10 +6,10 @@
  * Time: 16:51
  */
 
-namespace App\Domain\Entity;
+namespace App\ApplicationService\UseCase;
 
 
-use App\Domain\Exception\EmptyStringException;
+use App\Domain\Entity\Sentence;
 
 class WordCounter
 {
@@ -35,15 +35,10 @@ class WordCounter
 
     public function count() : int
     {
-        $strings = explode(' ', $this->sentence->getBody());
 
-        foreach ($strings as $string){
+        $words = $this->sentence->getWords();
 
-            try {
-                $word = new Word($string);
-            } catch (EmptyStringException $exception) {
-                continue;
-            }
+        foreach ($words as $word){
 
             $this->words[] = $word;
         }

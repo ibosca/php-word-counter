@@ -6,10 +6,9 @@
  * Time: 17:05
  */
 
-namespace App\Domain\Entity;
+namespace App\ApplicationService\UseCase;
 
-
-use App\Domain\Exception\EmptyStringException;
+use App\Domain\Entity\Word;
 
 class StartingWithCapitalLetterWordCounter extends WordCounter
 {
@@ -19,21 +18,18 @@ class StartingWithCapitalLetterWordCounter extends WordCounter
      */
     private $words = [];
 
-    public function count(): int
+    public function count() : int
     {
-        $strings = explode(' ', $this->sentence->getBody());
 
-        foreach ($strings as $string){
+        $words = $this->sentence->getWords();
 
-            try {
-                $word = new Word($string);
-            } catch (EmptyStringException $exception) {
-                continue;
-            }
+        /** @var Word $word */
+        foreach ($words as $word){
 
             if($word->isStartingWithCapitalLetter()){
                 $this->words[] = $word;
             }
+
         }
 
         return count($this->words);
