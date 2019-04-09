@@ -10,6 +10,7 @@ namespace App\Domain\Entity;
 
 
 use App\Domain\Exception\EmptyStringException;
+use PHPUnit\Runner\Exception;
 
 class Word
 {
@@ -46,7 +47,6 @@ class Word
 
     /**
      * @param mixed $text
-     * @throws EmptyStringException
      */
     public function setText($text) : void
     {
@@ -55,14 +55,9 @@ class Word
 
     /**
      * @param $text
-     * @throws EmptyStringException
      */
     private function update($text) : void
     {
-        if(empty($text)){
-            throw new EmptyStringException();
-        }
-
         $this->text = $text;
         $this->initialLetter = $this->getInitialLetter();
     }
