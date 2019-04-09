@@ -27,6 +27,7 @@ class Sentence
     /**
      * Sentence constructor.
      * @param $body
+     * @throws EmptyStringException
      */
     public function __construct($body)
     {
@@ -36,6 +37,10 @@ class Sentence
 
     public function buildWords() : void
     {
+        if(empty($this->body)){
+            throw new EmptyStringException();
+        }
+
         $strings = explode(' ', $this->body);
 
         foreach ($strings as $string){
