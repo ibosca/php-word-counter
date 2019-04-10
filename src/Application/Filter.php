@@ -13,6 +13,17 @@ abstract class Filter
 {
     CONST FILTERS = 'filters';
 
+    CONST availableFilters = [
+        LargerThanTwoFilter::name => LargerThanTwoFilter::class,
+        StartingWithCapitalLetterFilter::name => StartingWithCapitalLetterFilter::class,
+        StartingWithVocalFilter::name => StartingWithVocalFilter::class
+    ];
+
+    public static function getAvailableFilters() : array
+    {
+        return array_keys(self::availableFilters);
+    }
+
     public abstract function filter($words);
 
 }

@@ -13,12 +13,6 @@ use App\Domain\Sentence;
 class FilterComposition
 {
 
-    CONST availableFilters = [
-        LargerThanTwoFilter::name => LargerThanTwoFilter::class,
-        StartingWithCapitalLetterFilter::name => StartingWithCapitalLetterFilter::class,
-        StartingWithVocalFilter::name => StartingWithVocalFilter::class
-    ];
-
     /**
      * @var array $enabledFilters
      */
@@ -31,7 +25,7 @@ class FilterComposition
     public function __construct(array $filterNames)
     {
 
-        foreach (self::availableFilters as $filterName => $filterClass){
+        foreach (Filter::availableFilters as $filterName => $filterClass){
 
             if(in_array($filterName, $filterNames)){
                 $this->enabledFilters[] = new $filterClass();
@@ -52,11 +46,5 @@ class FilterComposition
 
         return $words;
     }
-
-    public static function getAvailableFilters() : array
-    {
-        return array_keys(self::availableFilters);
-    }
-
 
 }

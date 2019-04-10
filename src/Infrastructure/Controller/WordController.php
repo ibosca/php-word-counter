@@ -49,7 +49,7 @@ class WordController extends AbstractController
      */
     public function filtersAction()
     {
-        return new JsonResponse([Filter::FILTERS => FilterComposition::getAvailableFilters()]);
+        return new JsonResponse([Filter::FILTERS => Filter::getAvailableFilters()]);
     }
 
 }
