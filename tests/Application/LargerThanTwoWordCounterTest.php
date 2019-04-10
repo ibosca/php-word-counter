@@ -6,15 +6,19 @@
  * Time: 00:36
  */
 
-namespace App\Tests\ApplicationService\UseCase;
+namespace App\Tests\Application;
 
-use App\ApplicationService\UseCase\LargerThanTwoWordCounter;
-use App\Domain\Entity\Sentence;
+use App\Application\LargerThanTwoWordCounter;
+use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
+use App\Domain\Exception\EmptyStringException;
 
 class LargerThanTwoWordCounterTest extends TestCase
 {
 
+    /**
+     * @throws EmptyStringException
+     */
     public function testCount()
     {
         $sentence = new Sentence("I have four words");

@@ -6,9 +6,9 @@
  * Time: 17:05
  */
 
-namespace App\ApplicationService\UseCase;
+namespace App\Application;
 
-use App\Domain\Entity\Word;
+use App\Domain\Word;
 
 class StartingWithCapitalLetterWordCounter extends WordCounter
 {

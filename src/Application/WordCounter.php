@@ -6,10 +6,9 @@
  * Time: 16:51
  */
 
-namespace App\ApplicationService\UseCase;
+namespace App\Application;
 
-
-use App\Domain\Entity\Sentence;
+use App\Domain\Sentence;
 
 class WordCounter
 {

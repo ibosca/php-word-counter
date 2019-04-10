@@ -6,11 +6,7 @@
  * Time: 17:08
  */
 
-namespace App\Domain\Entity;
-
-
-use App\Domain\Exception\EmptyStringException;
-use PHPUnit\Runner\Exception;
+namespace App\Domain;
 
 class Word
 {
@@ -30,7 +26,6 @@ class Word
     /**
      * Word constructor.
      * @param string $text
-     * @throws EmptyStringException
      */
     public function __construct($text)
     {

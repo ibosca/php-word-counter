@@ -8,15 +8,16 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\ApplicationService\UseCase\LargerThanTwoWordCounter;
-use App\ApplicationService\UseCase\StartingWithCapitalLetterWordCounter;
-use App\ApplicationService\UseCase\StartingWithVocalWordCounter;
-use App\ApplicationService\UseCase\WordCounter;
-use App\Domain\Entity\Sentence;
+use App\Application\LargerThanTwoWordCounter;
+use App\Application\StartingWithCapitalLetterWordCounter;
+use App\Application\StartingWithVocalWordCounter;
+use App\Application\WordCounter;
 use App\Domain\Exception\EmptyStringException;
+use App\Domain\Sentence;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class WordController extends AbstractController
 {

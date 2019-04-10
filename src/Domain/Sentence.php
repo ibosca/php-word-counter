@@ -6,7 +6,7 @@
  * Time: 02:50
  */
 
-namespace App\Domain\Entity;
+namespace App\Domain;
 
 use App\Domain\Exception\EmptyStringException;
 
@@ -35,6 +35,9 @@ class Sentence
         $this->buildWords();
     }
 
+    /**
+     * @throws EmptyStringException
+     */
     public function buildWords() : void
     {
         if(empty($this->body)){
@@ -45,13 +48,9 @@ class Sentence
 
         foreach ($strings as $string){
 
-            try {
-                $word = new Word($string);
-            } catch (EmptyStringException $exception) {
-                continue;
-            }
-
+            $word = new Word($string);
             $this->words[] = $word;
+
         }
     }
 

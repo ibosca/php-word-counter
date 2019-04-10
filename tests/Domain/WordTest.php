@@ -6,19 +6,14 @@
  * Time: 21:42
  */
 
-namespace App\Tests\Domain\Entity;
+namespace App\Tests\Domain;
 
-use App\Domain\Entity\Word;
+use App\Domain\Word;
 use PHPUnit\Framework\TestCase;
-use App\Domain\Exception\EmptyStringException;
-
 
 class WordTest extends TestCase
 {
 
-    /**
-     * @throws EmptyStringException
-     */
     public function testInitialLetter()
     {
         $word = new Word('Test');
@@ -29,9 +24,6 @@ class WordTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    /**
-     * @throws EmptyStringException
-     */
     public function testIsLargerThanTwo()
     {
         $word = new Word('Test');
@@ -54,9 +46,6 @@ class WordTest extends TestCase
 
     }
 
-    /**
-     * @throws EmptyStringException
-     */
     public function testIsStartingWithVocal()
     {
         $word = new Word('iPhone');
@@ -77,10 +66,6 @@ class WordTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-
-    /**
-     * @throws EmptyStringException
-     */
     public function testIsStartingWithCapitalLetter()
     {
         $word = new Word('Phone');
