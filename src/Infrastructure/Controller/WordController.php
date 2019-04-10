@@ -13,10 +13,10 @@ use App\ApplicationService\UseCase\StartingWithCapitalLetterWordCounter;
 use App\ApplicationService\UseCase\StartingWithVocalWordCounter;
 use App\ApplicationService\UseCase\WordCounter;
 use App\Domain\Entity\Sentence;
+use App\Domain\Exception\EmptyStringException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 
 class WordController extends AbstractController
 {
@@ -30,10 +30,14 @@ class WordController extends AbstractController
     {
         $data = json_decode($request->getContent(), true);
 
-        $sentence = new Sentence($data['body']);
+        try{
+            $sentence = new Sentence($data['body']);
+
+        }catch(EmptyStringException $emptyStringException){
+            return new JsonResponse($emptyStringException->__toArray());
+        }
 
         $counter = new WordCounter($sentence);
-
         return new JsonResponse([Sentence::WORDS => $counter->count()]);
     }
 
@@ -46,10 +50,14 @@ class WordController extends AbstractController
     {
         $data = json_decode($request->getContent(), true);
 
-        $sentence = new Sentence($data['body']);
+        try{
+            $sentence = new Sentence($data['body']);
+
+        }catch(EmptyStringException $emptyStringException){
+            return new JsonResponse($emptyStringException->__toArray());
+        }
 
         $counter = new StartingWithVocalWordCounter($sentence);
-
         return new JsonResponse([ Sentence::WORDS => $counter->count()]);
     }
 
@@ -61,13 +69,14 @@ class WordController extends AbstractController
     public function wordsLargerThanTwo(Request $request)
     {
         $data = json_decode($request->getContent(), true);
+        try{
+            $sentence = new Sentence($data['body']);
 
-        $sentence = new Sentence($data['body']);
-
+        }catch(EmptyStringException $emptyStringException){
+            return new JsonResponse($emptyStringException->__toArray());
+        }
         $counter = new LargerThanTwoWordCounter($sentence);
-
         return new JsonResponse([Sentence::WORDS => $counter->count()]);
-
     }
 
     /**
@@ -79,11 +88,16 @@ class WordController extends AbstractController
     {
         $data = json_decode($request->getContent(), true);
 
-        $sentence = new Sentence($data['body']);
+        try{
+            $sentence = new Sentence($data['body']);
+
+        }catch(EmptyStringException $emptyStringException){
+            return new JsonResponse($emptyStringException->__toArray());
+        }
 
         $counter = new StartingWithCapitalLetterWordCounter($sentence);
-
         return new JsonResponse([Sentence::WORDS => $counter->count()]);
+
     }
 
 }
