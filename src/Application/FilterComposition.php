@@ -31,10 +31,10 @@ class FilterComposition
     public function __construct(array $filterNames)
     {
 
-        foreach (self::availableFilters as $name => $filter){
+        foreach (self::availableFilters as $filterName => $filterClass){
 
-            if(in_array($name, $filterNames)){
-                $this->enabledFilters[] = new $filter();
+            if(in_array($filterName, $filterNames)){
+                $this->enabledFilters[] = new $filterClass();
             }
 
         }
