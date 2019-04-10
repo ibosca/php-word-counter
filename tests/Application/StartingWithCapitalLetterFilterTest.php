@@ -8,12 +8,12 @@
 
 namespace App\Tests\Application;
 
-use App\Application\StartingWithVocalFilter;
+use App\Application\StartingWithCapitalLetterFilter;
 use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 
-class StartingWithVocalWordCounterTest extends TestCase
+class StartingWithCapitalLetterFilterTest extends TestCase
 {
 
     /**
@@ -23,10 +23,10 @@ class StartingWithVocalWordCounterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new StartingWithVocalFilter($sentence);
+        $counter = new StartingWithCapitalLetterFilter();
 
         $expected = 1;
-        $actual   = $counter->count();
+        $actual   = count($counter->filter($sentence->getWords()));
 
         $this->assertEquals($expected, $actual);
     }

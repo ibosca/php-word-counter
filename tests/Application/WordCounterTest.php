@@ -8,6 +8,7 @@
 
 namespace App\Tests\Application;
 
+use App\Application\FilterComposition;
 use App\Application\WordCounter;
 use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
@@ -22,8 +23,9 @@ class WordCounterTest extends TestCase
     public function testCount()
     {
         $sentence = new Sentence("I have four words");
+        $filterComposition = new FilterComposition([]);
 
-        $counter = new WordCounter($sentence);
+        $counter = new WordCounter($sentence, $filterComposition);
 
         $expected = 4;
         $actual   = $counter->count();

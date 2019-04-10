@@ -13,7 +13,7 @@ use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 
-class LargerThanTwoWordCounterTest extends TestCase
+class LargerThanTwoFilterTest extends TestCase
 {
 
     /**
@@ -23,10 +23,10 @@ class LargerThanTwoWordCounterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new LargerThanTwoFilter($sentence);
+        $counter = new LargerThanTwoFilter();
 
         $expected = 3;
-        $actual   = $counter->count();
+        $actual   = count($counter->filter($sentence->getWords()));
 
         $this->assertEquals($expected, $actual);
     }
