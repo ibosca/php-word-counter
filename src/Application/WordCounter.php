@@ -16,33 +16,28 @@ class WordCounter
     /**
      * @var Sentence $sentence
      */
-    protected $sentence;
+    private $sentence;
 
     /**
-     * @var array $words
+     * @var FilterComposition $filter
      */
-    private $words = [];
+    private $filterComposition;
 
     /**
      * WordCounter constructor.
      * @param Sentence $sentence
+     * @param FilterComposition $filterComposition
      */
-    public function __construct(Sentence $sentence)
+    public function __construct(Sentence $sentence, FilterComposition $filterComposition)
     {
-        $this->sentence = $sentence;
+        $this->sentence            = $sentence;
+        $this->filterComposition   = $filterComposition;
     }
 
     public function count() : int
     {
-
-        $words = $this->sentence->getWords();
-
-        foreach ($words as $word){
-
-            $this->words[] = $word;
-        }
-
-        return count($this->words);
+        $words = $this->filterComposition->execute($this->sentence);
+        return count($words);
     }
 
 

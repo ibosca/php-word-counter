@@ -8,7 +8,7 @@
 
 namespace App\Tests\Application;
 
-use App\Application\StartingWithCapitalLetterWordCounter;
+use App\Application\StartingWithCapitalLetterFilter;
 use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
@@ -23,7 +23,7 @@ class StartingWithCapitalLetterWordCounterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new StartingWithCapitalLetterWordCounter($sentence);
+        $counter = new StartingWithCapitalLetterFilter($sentence);
 
         $expected = 1;
         $actual   = $counter->count();

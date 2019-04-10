@@ -8,7 +8,7 @@
 
 namespace App\Tests\Application;
 
-use App\Application\LargerThanTwoWordCounter;
+use App\Application\LargerThanTwoFilter;
 use App\Domain\Sentence;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
@@ -23,7 +23,7 @@ class LargerThanTwoWordCounterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new LargerThanTwoWordCounter($sentence);
+        $counter = new LargerThanTwoFilter($sentence);
 
         $expected = 3;
         $actual   = $counter->count();
