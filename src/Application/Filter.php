@@ -11,6 +11,7 @@ namespace App\Application;
 
 abstract class Filter
 {
+    CONST FILTERS = 'filters';
 
     public abstract function filter($words);
 

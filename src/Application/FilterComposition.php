@@ -41,7 +41,7 @@ class FilterComposition
 
     }
 
-    public function execute(Sentence $sentence)
+    public function execute(Sentence $sentence) : array
     {
         $words = $sentence->getWords();
 
@@ -51,6 +51,11 @@ class FilterComposition
         }
 
         return $words;
+    }
+
+    public static function getAvailableFilters() : array
+    {
+        return array_keys(self::availableFilters);
     }
 
 

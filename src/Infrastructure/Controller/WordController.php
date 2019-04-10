@@ -8,6 +8,7 @@
 
 namespace App\Infrastructure\Controller;
 
+use App\Application\Filter;
 use App\Application\FilterComposition;
 use App\Application\WordCounter;
 use App\Domain\Exception\EmptyStringException;
@@ -25,7 +26,7 @@ class WordController extends AbstractController
      * @param Request $request
      * @return JsonResponse
      */
-    public function words(Request $request)
+    public function wordsAction(Request $request)
     {
         $data = json_decode($request->getContent(), true);
 
@@ -40,6 +41,15 @@ class WordController extends AbstractController
         $counter = new WordCounter($sentence, $filterComposition);
 
         return new JsonResponse([Sentence::WORDS => $counter->count()]);
+    }
+
+    /**
+     * @Route("/filters", name="available_filters", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function filtersAction()
+    {
+        return new JsonResponse([Filter::FILTERS => FilterComposition::getAvailableFilters()]);
     }
 
 }
