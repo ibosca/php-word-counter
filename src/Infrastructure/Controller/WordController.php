@@ -8,11 +8,11 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Application\Filter;
-use App\Application\FilterComposition;
 use App\Application\WordCounter;
 use App\Domain\Exception\EmptyStringException;
 use App\Domain\Sentence;
+use App\Domain\Service\Filter;
+use App\Domain\Service\FilterComposition;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

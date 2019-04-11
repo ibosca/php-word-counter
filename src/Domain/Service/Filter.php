@@ -6,7 +6,7 @@
  * Time: 00:20
  */
 
-namespace App\Application;
+namespace App\Domain\Service;
 
 
 abstract class Filter

@@ -8,9 +8,9 @@
 
 namespace App\Tests\Application;
 
-use App\Application\FilterComposition;
 use App\Application\WordCounter;
 use App\Domain\Sentence;
+use App\Domain\Service\FilterComposition;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 

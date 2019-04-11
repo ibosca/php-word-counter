@@ -9,6 +9,7 @@
 namespace App\Application;
 
 use App\Domain\Sentence;
+use App\Domain\Service\FilterComposition;
 
 class WordCounter
 {

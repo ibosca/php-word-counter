@@ -6,14 +6,14 @@
  * Time: 00:36
  */
 
-namespace App\Tests\Application;
+namespace App\Tests\Domain\Service;
 
-use App\Application\StartingWithVocalFilter;
 use App\Domain\Sentence;
+use App\Domain\Service\LargerThanTwoFilter;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 
-class StartingWithVocalFilterTest extends TestCase
+class LargerThanTwoFilterTest extends TestCase
 {
 
     /**
@@ -23,9 +23,9 @@ class StartingWithVocalFilterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new StartingWithVocalFilter();
+        $counter = new LargerThanTwoFilter();
 
-        $expected = 1;
+        $expected = 3;
         $actual   = count($counter->filter($sentence->getWords()));
 
         $this->assertEquals($expected, $actual);

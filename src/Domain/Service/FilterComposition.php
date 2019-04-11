@@ -6,7 +6,7 @@
  * Time: 00:36
  */
 
-namespace App\Application;
+namespace App\Domain\Service;
 
 use App\Domain\Sentence;
 

@@ -3,24 +3,24 @@
  * Created by PhpStorm.
  * User: isaac
  * Date: 08/04/2019
- * Time: 16:57
+ * Time: 17:01
  */
 
-namespace App\Application;
+namespace App\Domain\Service;
 
 use App\Domain\Word;
 
-class StartingWithVocalFilter extends Filter
+class LargerThanTwoFilter extends Filter
 {
 
-    CONST name = 'STARTING_WITH_VOCAL';
+    CONST name = 'LARGER_THAN_TWO';
 
     public function filter($words)
     {
         /** @var Word $word */
         foreach ($words as $key => $word){
 
-            if(!$word->isStartingWithVocal()){
+            if(!$word->isLargerThanTwo()){
                 unset($words[$key]);
             }
 

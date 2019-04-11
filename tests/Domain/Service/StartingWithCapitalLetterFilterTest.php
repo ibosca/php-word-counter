@@ -6,14 +6,14 @@
  * Time: 00:36
  */
 
-namespace App\Tests\Application;
+namespace App\Tests\Domain\Service;
 
-use App\Application\LargerThanTwoFilter;
 use App\Domain\Sentence;
+use App\Domain\Service\StartingWithCapitalLetterFilter;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 
-class LargerThanTwoFilterTest extends TestCase
+class StartingWithCapitalLetterFilterTest extends TestCase
 {
 
     /**
@@ -23,9 +23,9 @@ class LargerThanTwoFilterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new LargerThanTwoFilter();
+        $counter = new StartingWithCapitalLetterFilter();
 
-        $expected = 3;
+        $expected = 1;
         $actual   = count($counter->filter($sentence->getWords()));
 
         $this->assertEquals($expected, $actual);

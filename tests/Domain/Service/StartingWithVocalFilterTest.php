@@ -6,14 +6,14 @@
  * Time: 00:36
  */
 
-namespace App\Tests\Application;
+namespace App\Tests\Domain\Service;
 
-use App\Application\StartingWithCapitalLetterFilter;
 use App\Domain\Sentence;
+use App\Domain\Service\StartingWithVocalFilter;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Exception\EmptyStringException;
 
-class StartingWithCapitalLetterFilterTest extends TestCase
+class StartingWithVocalFilterTest extends TestCase
 {
 
     /**
@@ -23,7 +23,7 @@ class StartingWithCapitalLetterFilterTest extends TestCase
     {
         $sentence = new Sentence("I have four words");
 
-        $counter = new StartingWithCapitalLetterFilter();
+        $counter = new StartingWithVocalFilter();
 
         $expected = 1;
         $actual   = count($counter->filter($sentence->getWords()));
