@@ -1,0 +1,1 @@
+2019/04/11 18:44:12 [alert] 7#7: *20 write() to "/var/log/nginx/symfony_access.log" failed (22: Invalid argument) while logging request, client: 172.19.0.1, server: localhost, request: "POST /words HTTP/1.1", upstream: "fastcgi://172.19.0.2:9000", host: "localhost:8080"

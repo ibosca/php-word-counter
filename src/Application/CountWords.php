@@ -11,7 +11,7 @@ namespace App\Application;
 use App\Domain\Sentence;
 use App\Domain\Service\FilterComposition;
 
-class WordCounter
+class CountWords
 {
 
     /**
@@ -25,7 +25,7 @@ class WordCounter
     private $filterComposition;
 
     /**
-     * WordCounter constructor.
+     * CountWords constructor.
      * @param Sentence $sentence
      * @param FilterComposition $filterComposition
      */

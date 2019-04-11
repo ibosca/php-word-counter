@@ -8,7 +8,7 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Application\WordCounter;
+use App\Application\CountWords;
 use App\Domain\Exception\EmptyStringException;
 use App\Domain\Sentence;
 use App\Domain\Service\Filter;
@@ -38,7 +38,7 @@ class WordController extends AbstractController
         }
 
         $filterComposition = new FilterComposition($data['filters']);
-        $counter = new WordCounter($sentence, $filterComposition);
+        $counter = new CountWords($sentence, $filterComposition);
 
         return new JsonResponse([Sentence::WORDS => $counter->count()]);
     }
