@@ -14,6 +14,7 @@ class LargerThanTwoFilter extends Filter
 {
 
     CONST name = 'LARGER_THAN_TWO';
+    CONST publicName = 'LTT';
 
     public function filter($words)
     {

@@ -14,6 +14,7 @@ class StartingWithCapitalLetterFilter extends Filter
 {
 
     CONST name = 'STARTING_WITH_CAPITAL_LETTER';
+    CONST publicName = 'SCL';
 
     public function filter($words)
     {

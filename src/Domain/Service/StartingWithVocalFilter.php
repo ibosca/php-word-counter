@@ -14,6 +14,7 @@ class StartingWithVocalFilter extends Filter
 {
 
     CONST name = 'STARTING_WITH_VOCAL';
+    CONST publicName = 'SV';
 
     public function filter($words)
     {

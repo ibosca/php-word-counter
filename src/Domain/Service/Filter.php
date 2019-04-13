@@ -19,9 +19,15 @@ abstract class Filter
         StartingWithVocalFilter::name => StartingWithVocalFilter::class
     ];
 
+    CONST filterNameAssoc = [
+        LargerThanTwoFilter::name => LargerThanTwoFilter::publicName,
+        StartingWithCapitalLetterFilter::name => StartingWithCapitalLetterFilter::publicName,
+        StartingWithVocalFilter::name => StartingWithVocalFilter::publicName
+    ];
+
     public static function getAvailableFilters() : array
     {
-        return array_keys(self::availableFilters);
+        return array_values(self::filterNameAssoc);
     }
 
     public abstract function filter($words);

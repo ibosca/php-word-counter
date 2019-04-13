@@ -25,10 +25,11 @@ class FilterComposition
     public function __construct(array $filterNames)
     {
 
-        foreach (Filter::availableFilters as $filterName => $filterClass){
+        foreach (Filter::filterNameAssoc as $filterName => $filterPublicName){
 
-            if(in_array($filterName, $filterNames)){
-                $this->enabledFilters[] = new $filterClass();
+            if(in_array($filterPublicName, $filterNames)){
+                $filerClass = Filter::availableFilters[$filterName];
+                $this->enabledFilters[] = new $filerClass;
             }
 
         }
