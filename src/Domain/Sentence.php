@@ -31,7 +31,7 @@ class Sentence
      */
     public function __construct($body)
     {
-        $this->body = $body;
+        $this->body = trim($body);
         $this->buildWords();
     }
 
